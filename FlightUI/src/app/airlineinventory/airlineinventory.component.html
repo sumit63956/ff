@@ -1,0 +1,226 @@
+<div class="row">
+    <div class="col-xl-9">
+        <div class="card border-0">
+            <div class="card-body">
+                <h2>Add Airline Inventory</h2>
+                <form [formGroup]="AirlineInventoryModel.formAirlineInventoryGroup">
+
+                    <div>
+                        <label class="form-label">Airline Fligh No</label>
+                        <input [(ngModel)]="AirlineInventoryModel.flighNo" formControlName="FlightNoControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','FlightNoControl'))">Flight No is required
+                        </p>
+
+                    </div>
+
+                    <div>
+                        <label class="form-label">Airline ID</label>
+                        <input [(ngModel)]="AirlineInventoryModel.airlineId" formControlName="AirlineIDControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','AirlineIDControl'))">Airline ID is required
+                        </p>
+
+
+                    </div>
+                    <div>
+                        <label class="form-label">From Place</label>
+                        <input [(ngModel)]="AirlineInventoryModel.frmPlace" formControlName="FromPlaceControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','FromPlaceControl'))">From Place is required
+                        </p>
+
+                    </div>
+                    <div>
+                        <label class="form-label">To Place</label>
+                        <input [(ngModel)]="AirlineInventoryModel.toPlace" formControlName="ToPlaceControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','ToPlaceControl'))">To Place is required
+                        </p>
+
+                    </div>
+                    <div>
+                        <label class="form-label">Start date</label>
+                        <input [(ngModel)]="AirlineInventoryModel.strtDate" formControlName="StartDateControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','StartDateControl'))">Start Date is required
+                        </p>
+
+                    </div>
+
+                    <div>
+                        <label class="form-label">End Date</label>
+                        <input [(ngModel)]="AirlineInventoryModel.endDate" formControlName="EndDateControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','EndDateControl'))">End Date is required
+                        </p>
+
+                    </div>
+
+                    <div>
+                        <label class="form-label">ScheduleID</label>
+                        <input [(ngModel)]="AirlineInventoryModel.scheduleId" formControlName="ScheduleIDControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','ScheduleIDControl'))">Schedule ID is
+                            required</p>
+
+                    </div>
+
+                    <div>
+                        <label class="form-label">Instrument</label>
+                        <input [(ngModel)]="AirlineInventoryModel.instrument" formControlName="InstrumentControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','InstrumentControl'))">Instrument is
+                            required</p>
+
+                    </div>
+                    <div>
+                        <label class="form-label">No Of Seats</label>
+                        <input [(ngModel)]="AirlineInventoryModel.noOfSeats" formControlName="NoofSeatsControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','NoofSeatsControl'))">No Of Seats is required
+                        </p>
+
+                    </div>
+                    <div>
+                        <label class="form-label">No of BC Seats</label>
+                        <input [(ngModel)]="AirlineInventoryModel.noOfBCSeats" formControlName="NoofBCSeatsNoControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','NoofBCSeatsNoControl'))">No of BC Seats is
+                            required</p>
+
+                    </div>
+                    <div>
+                        <label class="form-label">No Of NBC Seats</label>
+                        <input [(ngModel)]="AirlineInventoryModel.noOfNBCSeats" formControlName="NoofNBCSeatsNoControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','NoofNBCSeatsNoControl'))">No Of NBC Seats is
+                            required</p>
+
+                    </div>
+                    <div>
+                        <label class="form-label">Ticket Cost</label>
+                        <input [(ngModel)]="AirlineInventoryModel.ticketCost" formControlName="TicketCostControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','TicketCostControl'))">Ticket Cost is
+                            required</p>
+
+                    </div>
+                    <div>
+                        <label class="form-label">No Of Rows</label>
+                        <input [(ngModel)]="AirlineInventoryModel.noOfRows" formControlName="NoOfRowsControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','NoOfRowsControl'))">No Of Rows is required
+                        </p>
+
+                    </div>
+                    <!-- <div>
+                        <label class="form-label">Meal</label>
+                        <input [(ngModel)]="AirlineInventoryModel.meal" [ngModelOptions]="{standalone: true}"
+                            class="form-control" type="text" />
+                    </div> -->
+                    <div class="col-md-4">
+                        <label class="form-label">Meal</label>
+                        <br />
+                        <input class="form-check-input" [checked]="true" (change)="OnRadioOptionChangeMeal('Veg')"
+                            type="radio" id="rdoVeg" name="meal">
+                          <label class="form-check-label" for="rdoVeg">Veg</label>
+
+                        <input class="form-check-input" type="radio" (change)="OnRadioOptionChangeMeal('NVeg')"
+                            id="rdoNVeg" name="meal">
+                          <label class="form-check-label" for="rdoNVeg">Non Veg</label>
+                    </div>
+                    <!-- <div>
+                            <label class="form-label">trip</label>
+                            <input [(ngModel)]="AirlineInventoryModel.trip" [ngModelOptions]="{standalone: true}" class="form-control" type="text" />
+                        </div> -->
+                    <div class="col-md-4">
+                        <label class="form-label">Trip</label>
+                        <br />
+                        <input class="form-check-input" [checked]="true" (change)="OnRadioOptionChange('onwardTrip')"
+                            type="radio" id="rdoOneWay" name="roundTrip">
+                          <label class="form-check-label" for="rdoOneWay">One Way</label>
+
+                        <input class="form-check-input" type="radio" (change)="OnRadioOptionChange('roundTrip')"
+                            id="rdoRoundTrip" name="roundTrip">
+                          <label class="form-check-label" for="rdoRoundTrip">Round Trip</label>
+                    </div>
+                    <div>
+                        <label class="form-label">To Place ID</label>
+                        <input [(ngModel)]="AirlineInventoryModel.toPlaceId" formControlName="ToPlaceidControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','ToPlaceidControl'))">To Place ID is required
+                        </p>
+
+                    </div>
+                    <div>
+                        <label class="form-label">From Place Id</label>
+                        <input [(ngModel)]="AirlineInventoryModel.fromPlaceId" formControlName="FromPlaceIdControl"
+                            class="form-control" type="text" />
+                        <p style="color:red" [hidden]="!(hasError('required','FromPlaceIdControl'))">From Place ID is
+                            required</p>
+
+                    </div>
+
+                    <div class="py-4">
+                        <input type="submit" [disabled]="(!AirlineInventoryModel.formAirlineInventoryGroup.valid)" class="btn btn-primary" value="Add Airline Inventory" (click)="AddAirlineInventory()" />
+                            
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<table class="table caption-top">
+    <caption>Airline Inventory</caption>
+    <thead class="table-light">
+        <td>Flight No</td>
+        <td>Airline ID</td>
+        <td>From Place</td>
+        <td>To Place</td>
+        <td>Start Date</td>
+        <td>End Date</td>
+        <td>ScheduleID</td>
+        <td>Instrument</td>
+        <td>No Of Seats</td>
+        <td>No of BC Seats</td>
+        <td>No Of NBC Seats</td>
+        <td>Ticket Cost</td>
+        <td>No Of Rows</td>
+        <td>Meal</td>
+        <td>Trip</td>
+        <td>To Place ID</td>
+        <td>From Place Id</td>
+     
+    </thead>
+    <tr *ngFor="let air of AirlineInventoryModels">
+        <td>{{air.flighNo}}</td>
+        <td>{{air.airlineId}}</td>
+        <td>{{air.frmPlace}}</td>
+        <td>{{air.toPlace}}</td>
+        <td>{{air.strtDate}}</td>
+        <td>{{air.endDate}}</td>
+        <td>{{air.scheduleId}}</td>
+        <td>{{air.instrument}}</td>
+        <td>{{air.noOfSeats}}</td>
+        <td>{{air.noOfBCSeats}}</td>
+        <td>{{air.noOfNBCSeats}}</td>
+        <td>{{air.ticketCost}}</td>
+        <td>{{air.noOfRows}}</td>
+        <td>{{air.meal}}</td>
+        <td>{{air.trip}}</td>
+        <td>{{air.toPlaceId}}</td>
+        <td>{{air.fromPlaceId}}</td>
+        
+
+
+
+            <!-- <button type="button" (click)="BlockAirline(air)" class="btn btn-outline-primary" style="margin:10px">Block
+                Airline</button>
+                <button type="button" (click)="DeleteAirline(air)" class="btn btn-outline-primary" style="margin:10px">Delete
+                    Airline</button> -->
+        
+    </tr>
+</table>

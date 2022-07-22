@@ -1,0 +1,16 @@
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\bin\Debug\netcoreapp2.1\Project1.deps.json
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\bin\Debug\netcoreapp2.1\Project1.runtimeconfig.json
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\bin\Debug\netcoreapp2.1\Project1.runtimeconfig.dev.json
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\bin\Debug\netcoreapp2.1\Project1.dll
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\bin\Debug\netcoreapp2.1\Project1.pdb
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\obj\Debug\netcoreapp2.1\Project1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\obj\Debug\netcoreapp2.1\Project1.AssemblyInfoInputs.cache
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\obj\Debug\netcoreapp2.1\Project1.AssemblyInfo.cs
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\obj\Debug\netcoreapp2.1\Project1.csproj.CoreCompileInputs.cache
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\obj\Debug\netcoreapp2.1\Project1.RazorAssemblyInfo.cache
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\obj\Debug\netcoreapp2.1\Project1.RazorAssemblyInfo.cs
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\obj\Debug\netcoreapp2.1\Project1.RazorTargetAssemblyInfo.cache
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\obj\Debug\netcoreapp2.1\Project1.dll
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\obj\Debug\netcoreapp2.1\Project1.pdb
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\obj\Debug\netcoreapp2.1\Project1.genruntimeconfig.cache
+C:\Users\cogdotnet933\source\repos\FlightMicroservices\Project1\obj\Debug\netcoreapp2.1\Project1.csproj.AssemblyReference.cache

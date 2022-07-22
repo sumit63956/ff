@@ -1,0 +1,104 @@
+ 
+ 
+     <div class="row">
+        <div class="col-xl-9">
+            <div class="card border-0">
+                <div class="card-body">
+                    <h2>Ticket Booking</h2>
+                    <form [formGroup]="BookingModel.formBookingGroup">
+                   
+
+                         <div>
+                            <label class="form-label">Name</label>
+                            <input [(ngModel)]="BookingModel.name"  formControlName="NameControl" class="form-control" type="text" />
+                            <p style="color:red" [hidden]="!(hasError('required','NameControl'))">Name is required
+                            </p>
+                        </div>
+                         
+                         <div>
+                            <label class="form-label">Email ID</label>
+                            <input [(ngModel)]="BookingModel.emailId" formControlName="EmailidControl" class="form-control" type="text" />
+                            <p style="color:red" [hidden]="!(hasError('required','EmailidControl'))">Email Id is required
+                            </p>
+                        </div>
+                        <div>
+                            <label class="form-label">Gender</label>
+                            <br/>
+                            <input [(ngModel)]="BookingModel.gender"   formControlName="GenderControl" class="form-control" type="text" />
+                            <p style="color:red" [hidden]="!(hasError('required','GenderControl'))">Gender is required
+                            </p>
+                        </div>
+                        <div>
+                            <label class="form-label">Age</label>
+                            <input [(ngModel)]="BookingModel.age"  formControlName="AgeControl" class="form-control" type="text" />
+                            <p style="color:red" [hidden]="!(hasError('required','AgeControl'))">Age is required
+                            </p>
+                        </div>
+                        <div>
+                            <label class="form-label">Meal</label>
+                            <input [(ngModel)]="BookingModel.meal" formControlName="MealControl" class="form-control" type="text" />
+                            <p style="color:red" [hidden]="!(hasError('required','MealControl'))">Meal is required
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <label class="form-label">Seat No</label>
+                            <input [(ngModel)]="BookingModel.seatNo" formControlName="SeatNoControl"  class="form-control" type="text" />
+                            <p style="color:red" [hidden]="!(hasError('required','SeatNoControl'))">Seat No is required
+                            </p>
+                        </div>
+
+                        <div>
+                            <label class="form-label">Flight No</label>
+                            <input [(ngModel)]="BookingModel.flighNo"  formControlName="FlightNoControl" class="form-control" type="text" />
+                            <p style="color:red" [hidden]="!(hasError('required','FlightNoControl'))">Flight No is required
+                            </p>
+                        </div> 
+
+                        
+                        <div class="py-4">
+                            <input type="submit" [disabled]="(!BookingModel.formBookingGroup.valid)"  class="btn btn-primary" value="Book Tickets" (click)="BookTicket()" />
+                           
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+     <table class="table caption-top">
+        <caption>List of Booked Tickets</caption>
+        <thead class="table-light">
+    
+            <td>Name</td>
+            <td>Email ID Logo</td>
+            <td>Gender</td>
+            <td>Age</td>
+            <td>Meal</td>
+            <td>Seat No</td>
+            <td>Pnr</td>
+            <td>Flight No</td>
+            
+        </thead>
+        <tr *ngFor="let book of BookingModels">
+            <td>{{book.name}}</td>
+            <td>{{book.emailId}}</td>
+            <td>{{book.gender}}</td>
+            <td>{{book.age}}</td>
+            <td>{{book.meal}}</td>
+            <td>{{book.seatNo}}</td>
+            <td>{{book.pnr}}</td>
+            <td>{{book.flighNo}}</td>
+             <td>
+               
+    
+    
+                 <button type="button" (click)="DeleteTicket(book)" class="btn btn-outline-primary"
+                    style="margin:10px">Cancel Ticket</button> 
+                
+            </td> 
+        </tr>
+    </table>
+     
+   

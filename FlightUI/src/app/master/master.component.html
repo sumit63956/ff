@@ -1,0 +1,73 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['Home']">Customer App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['Home']">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  [routerLink]="['Customer']">Customer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"   [routerLink]="['Supplier']">Supplier</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+</div>  -->
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Flightt Application</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item active">
+            <a class="nav-link active" aria-current="page" [routerLink]="['Home']">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  [routerLink]="['Search/Add']">Search Ticket</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="LogggedIn(true)" [routerLink]="['Airline/Add']">Manage Airline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="LogggedIn(true)" [routerLink]="['AirlineInventory/Add']">Airline Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   *ngIf="LogggedIn(true)" [routerLink]="['Booking/Add']">Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="LogggedIn(true)" [routerLink]="['AirlineInventory/Add']">Manage Discount</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  *ngIf="LogggedIn(false)"   [routerLink]="['login']">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="LogggedIn(false)"  [routerLink]="['register']">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="LogggedIn(true)"  style="cursor: pointer;"   (click)="Logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+  <!-- Page Content -->
+
+    <div class="container-fluid" style="margin: 50px">
+        <router-outlet></router-outlet>
+    </div>

@@ -1,0 +1,92 @@
+<script>
+
+    $scope.showForm = false;
+
+    $scope.onClickForm = function () {
+        $scope.showForm = true;
+    }
+</script>
+
+<div class="row">
+    <div class="col-xl-9">
+        <div class="card border-0">
+            <div class="card-body">
+                <h2>Add Airline</h2>
+                <form [formGroup]="AirlineModel.formAirlineGroup">
+
+                    <div>
+                        <label class="form-label">Airline Name</label>
+                        <input [(ngModel)]="AirlineModel.name" formControlName="AirlineNameControl" class="form-control" type="text" />
+                         <p style="color:red" [hidden]="!(hasError('required','AirlineNameControl'))">Airline Name is required</p>
+                        <!--<p style="color:red"  [hidden]="!(hasError('pattern','AirlineNameControl'))">Customer code should be proper</p> -->
+                    </div>
+                    <div>
+                        <label class="form-label">Airline Logo</label>
+                        <input [(ngModel)]="AirlineModel.updateLogo" formControlName="AirlineLogoControl" class="form-control" type="text" />
+                        <p style="color:red"  [hidden]="!(hasError('required','AirlineLogoControl'))">Airline Logo is required</p>
+                    </div>
+                    <div>
+                        <label class="form-label">Contact No</label>
+                        <input [(ngModel)]="AirlineModel.contactNumber"formControlName="AirlineContactControl"
+                            class="form-control" type="text" />
+                            <p style="color:red"  [hidden]="!(hasError('required','AirlineContactControl'))">Contact Number is required</p>
+                    </div>
+                    <div>
+                        <label class="form-label">Contact Address</label>
+                        <input [(ngModel)]="AirlineModel.contactAdd" formControlName="AirlineAddControl"
+                            class="form-control" type="text" />
+                            <p style="color:red"  [hidden]="!(hasError('required','AirlineAddControl'))">Contact Address is required</p>
+                    </div>
+                    <!-- <div>
+                        <label class="form-label">Available</label>
+                        <input [(ngModel)]="AirlineModel.available" [ngModelOptions]="{standalone: true}" class="form-control" type="text" />
+                    </div> -->
+                    <div class="py-4">
+                        <input type="submit" [disabled]="(!AirlineModel.formAirlineGroup.valid)" class="btn btn-primary" value="Add Airline" (click)="AddAirline()" />
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<table class="table caption-top">
+    <caption>List of Airline</caption>
+    <thead class="table-light">
+
+        <td>Airline Name</td>
+        <td>Airline Logo</td>
+        <td>Airline Contactno</td>
+        <td>Airline Address</td>
+        <td>Airline Availability</td>
+        <td>Action</td>
+    </thead>
+    <tr *ngFor="let air of AirlineModels">
+        <td>{{air.name}}</td>
+        <td>{{air.updateLogo}}</td>
+        <td>{{air.contactNumber}}</td>
+        <td>{{air.contactAdd}}</td>
+        <td >
+            {{air.available}}
+        </td>
+        
+        <td>
+
+
+
+            <button type="button" (click)="BlockAirline(air)" class="btn btn-outline-primary" style="margin:10px">Block
+                Airline</button>
+                <button type="button" (click)="DeleteAirline(air)" class="btn btn-outline-primary" style="margin:10px">Delete
+                    Airline</button>
+                    <!-- <button type="button" (click)="AddInventory()" class="btn btn-outline-primary" style="margin:10px">Add Inventory
+                        </button> -->
+        </td>
+    </tr>
+</table>
+
+<!-- 
+{{CustomerModel.customerName}}
+{{CustomerModel.customerAmount}}
+{{CustomerModel.customerCode}} -->

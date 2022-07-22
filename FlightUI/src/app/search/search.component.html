@@ -1,0 +1,81 @@
+ 
+    
+     <div class="row">
+        <div class="col-xl-9">
+            <div class="card border-0">
+                <div class="card-body">
+                    <h2>Search</h2>
+                  
+                    <form [formGroup]="SearchModel.formSearchGroup">
+                        <div>
+                            <!-- <label class="form-label">Search By PNR</label> -->
+                            <input [(ngModel)]="SearchModel.pnrno" formControlName="PnrControl"  class="form-control" type="text" />
+                            <p style="color:red" [hidden]="!(hasError('required','PnrControl'))">PNR is required
+                            </p>
+                        </div>
+                        <div class="py-4">
+                            <input type="submit"  class="btn btn-primary" value="Search By PNR" (click)="Searchbypnr()" />
+                           
+                        </div>
+                        <div>
+                            <!-- <label class="form-label">Search By Email</label> -->
+                            <input [(ngModel)]="SearchModel.emailId" formControlName="EmailControl"  class="form-control" type="text" />
+                            <p style="color:red" [hidden]="!(hasError('required','EmailControl'))">Email is required
+                            </p>
+                        </div>
+                        <div class="py-4">
+                            <input type="submit"  class="btn btn-primary" value="Search By Email" (click)="Searchbyemail()" />
+                            
+                        </div>
+                        <div>
+                            <label class="form-label">From place</label>
+                            <input [(ngModel)]="FlightModel.frmPlace" formControlName="EmailControl"  class="form-control" type="text" />
+                            <p style="color:red" [hidden]="!(hasError('required','EmailControl'))">Email is required
+                            </p>
+                            <label class="form-label">To place</label>
+                            <input [(ngModel)]="FlightModel.toPlace" formControlName="EmailControl"  class="form-control" type="text" />
+                            <p style="color:red" [hidden]="!(hasError('required','EmailControl'))">Email is required
+                            </p>
+                            <div class="py-4">
+                                <input type="submit"  class="btn btn-primary" value="Search By Email" (click)="Searchbyemail()" />
+                            </div>
+                        </div>
+                        
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+ <table class="table caption-top">
+
+    <caption>List of Booked Tickets</caption>
+        <thead class="table-light">
+    
+            <td>Name</td>
+            <td>Email Id</td>
+            <td>Gender</td>
+            <td>Age</td>
+            <td>Meal</td>
+            <td>SeatNo</td>
+            <td>PNRNo</td>
+            
+        </thead>
+        <tr >
+            <td>{{SearchModels.name}}</td>
+            <td>{{SearchModels.emailId}}</td>
+            <td>{{SearchModels.gender}}</td>
+            <td>{{SearchModels.age}}</td>
+            <td>{{SearchModels.meal}}</td>
+            <td>{{SearchModels.seatNo}}</td>
+            <td>{{SearchModels.pnrno}}</td> 
+            <!-- <td>
+                <button type="button" (click)="DeleteTicket(book)" class="btn btn-outline-primary"
+                   style="margin:10px">Cancel Ticket</button>
+           </td>  -->
+        </tr>
+    </table>
+    
+    
